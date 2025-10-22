@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <form action="submit">
+        <h3>Add New Transaction</h3>
+        <label for="type">Type</label>
+        <select name="type" id="type">
+            <option value="income">Income</option>
+            <option value="expenditure">Expenditure</option>
+        </select>
+        <label for="amount">Amount</label>
+        <input type="number" value="$" placeholder="$0.00"/>
+        <label for="dateofT">Date</label>
+        <input type="date" />
+        <label for="category">Category</label>
+        <input type="text" placeholder="e.g. Salary, Groceries" />
+        <button type="submit">Add Transaction</button>
+    </form>
+</body>
+</html>
