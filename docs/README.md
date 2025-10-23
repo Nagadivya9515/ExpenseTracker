@@ -32,7 +32,8 @@ A simple web application for tracking monthly income and expenses, built with HT
 
 ## Demo / Screenshots
 
-![Screenshots] (https://mail.google.com/d4bb31b5-53e2-49ea-9933-2c54f24fe656)
+![Screenshots] (/expensetracker.png)
+
 
 ---
 
