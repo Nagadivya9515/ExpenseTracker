@@ -1,6 +1,7 @@
 let firstT = document.getElementById("first-t");
 let list = document.getElementById("transactionList");
 let balance = 0;
+
 let entries = [];
 
 let addT = document.getElementById("addT");

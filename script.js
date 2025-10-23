@@ -1,6 +1,15 @@
-let entries = [];
+// let entries = [];
 let bal = 0;
+let income = 0;
+let expenditure = 0;
 let accountBal = document.getElementById("balance");
+let incomeBal = document.getElementById("income");
+let expBal = document.getElementById("expenditure")
+incomeBal.textContent = "$0"
+expBal.textContent = "$0"
+accountBal.textContent = "$0";
+let entries = JSON.parse(localStorage.getItem("entries") )|| [];
+
 
 function renderTransactions() {
     let list = document.getElementById("transactionList");
@@ -23,6 +32,7 @@ function addTransaction() {
 
     if(transaction.typeT === "income") {
         bal += transaction.amountT;
+        income += transaction.amountT;
     }
     else {
         if (bal == 0) {
@@ -30,10 +40,16 @@ function addTransaction() {
             return;
         }
         bal -= transaction.amountT;
+        expenditure += transaction.amountT;
     }
+    
     entries.push(transaction);
+    localStorage.setItem("entries", JSON.stringify(entries));
 
     accountBal.textContent = "$" + bal;
+    incomeBal.textContent = "$+" + income;
+    expBal.textContent = "$-" + expenditure;
+
     typeT = "";
     amountT = "";
     dateT = ""
@@ -89,5 +105,6 @@ function createTransactionElement(transaction, index) {
 
 function deleteTransaction(index) {
     entries.splice(index, 1);
+    localStorage.setItem("entries", JSON.stringify(entries));
     renderTransactions();
 }

@@ -4,22 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <form action="submit">
-        <h3>Add New Transaction</h3>
+    <div>
+        <img src="techdialog-3.jpg" alt="">
+        <h1 id="title">Techdialog Expense Tracker</h1>
+    </div>
+    <div class="container">
+        
+    <form>
+        <h4 style="margin-bottom: 8px;">Balance Summary</h4>
+        <p style="margin-bottom: 4px;">Total Balance</p>
+        <h1 id="balance"></h1>
+        <hr>
+        <div class="summary-line">
+            <div>
+            <h3>Total Income</h3>
+            <p id="income"></p>
+            </div>
+            <div>
+                <h3>Total Expenses</h3>
+                <p id="expenditure"></p>
+            </div>
+        </div>
+        <h2>Add New Transaction</h2>
+        <div class="first-line">
+        <div>
         <label for="type">Type</label>
         <select name="type" id="type">
             <option value="income">Income</option>
             <option value="expenditure">Expenditure</option>
         </select>
+        </div>
+        <div>
         <label for="amount">Amount</label>
-        <input type="number" value="$" placeholder="$0.00"/>
-        <label for="dateofT">Date</label>
-        <input type="date" />
-        <label for="category">Category</label>
-        <input type="text" placeholder="e.g. Salary, Groceries" />
-        <button type="submit">Add Transaction</button>
+        <input type="number" placeholder="$0.00" id="amount"/>
+        </div>
+        </div>
+        <div class="second-line">
+        <div>
+        <label for="dateT">Date</label>
+        <input type="date" id="dateT" />
+        </div>
+        <div>
+        <label for="categoryT">Category</label>
+        <input type="text" placeholder="e.g. Salary, Groceries" id="categoryT" />
+        </div>
+        </div>
+        <button type="submit" id="addT" onclick="addTransaction()">Add Transaction</button>
     </form>
+    <div class="display">
+        <div id="first-t">
+            <h3>Transaction History</h3>
+            <ul id="transactionList">
+                <!-- <li>
+                    <div class="flex-log">
+                        <div class="left-flex">
+                        <i class="fa-solid fa-circle-up"></i>
+                        <div id="title">
+                            <h4>Salary</h4>
+                            <small>Oct 20, 2025</small>
+                        </div>
+                        </div>
+                        <div class="right-flex">
+                        <h2>+$5200</h2>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex-log">
+                        <div class="left-flex">
+                        <i class="fa-solid fa-circle-down"></i>
+                        <div id="title">
+                            <h4>Groceries</h4>
+                            <small>Oct 20, 2025</small>
+                        </div>
+                        </div>
+                        <div class="right-flex">
+                        <h2>-$200</h2>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
